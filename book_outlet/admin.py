@@ -6,5 +6,7 @@ from .models import Book
 
 class BookAdmin(admin.ModelAdmin):
     prepopulated_fields={"slug":("title",)}
+    list_filter=("title",)
+    list_display=("title", "author", "rating",)
 
 admin.site.register(Book, BookAdmin)
